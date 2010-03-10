@@ -637,8 +637,8 @@ function render_feedback_post() {
     feedback: request.params.feedback});
 
   sendEmail(
-    'feedback@etherpad.com',
-    'feedback@etherpad.com',
+    'plansthis@etherpad.com',
+    'plansthis@etherpad.com',
     subject,
     {},
     feedback
@@ -661,7 +661,7 @@ function render_emailinvite_post() {
              {toEmails: toEmails, padId: padId, username: username,
               subject: subject, message: message});
 
-  var fromAddr = '"EtherPad" <noreply@etherpad.com>';
+  var fromAddr = '"EtherPad" <noreply@plansthis.com>';
   // client enforces non-empty subject and message
   var subj = '[EtherPad] '+subject;
   var body = renderTemplateAsString('email/padinvite.ejs',

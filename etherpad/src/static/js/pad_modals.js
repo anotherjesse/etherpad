@@ -131,7 +131,7 @@ var padmodals = (function() {
       });
       $("#feedbackemails a").each(function() {
         var node = $(this);
-        node.attr('href', "mailto:"+node.attr('href')+"@etherpad.com");
+        node.attr('href', "mailto:"+node.attr('href')+"@plansthis.com");
       });
     },
     initShareBox: function() {
