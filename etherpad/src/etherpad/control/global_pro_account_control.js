@@ -87,7 +87,7 @@ function render_sign_in_post() {
   });
 
   response.redirect(
-    "https://"+subDomain+"."+httpsHost(request.host)+
+    "http://"+subDomain+"."+httpsHost(request.host)+
     "/ep/account/sign-in?instantSigninKey="+instantSigninKey);
 }
 
@@ -103,7 +103,7 @@ function render_recover_post() {
   function _recoverLink(accountRecord, domainRecord) {
     var host = (domainRecord.subDomain + "." + httpsHost(request.host));
     return (
-      "https://"+host+"/ep/account/forgot-password?instantSubmit=1&email="+
+      "http://"+host+"/ep/account/forgot-password?instantSubmit=1&email="+
       encodeURIComponent(accountRecord.email));
   }
 
