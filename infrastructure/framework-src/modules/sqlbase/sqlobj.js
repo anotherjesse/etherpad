@@ -178,7 +178,7 @@ function _setPreparedValues(tableName, pstmnt, keyList, obj, indexOffset) {
     } else if (typeof(v) == 'number') {
       pstmnt.setInt(j, v);
     } else if (typeof(v) == 'boolean') {
-      pstmnt.setBoolean(j, v);
+      pstmnt.setInt(j, (v ? 1 : 0));
     } else if (v.valueOf && v.getDate && v.getHours) {
       pstmnt.setTimestamp(j, new java.sql.Timestamp(+v));
     } else {

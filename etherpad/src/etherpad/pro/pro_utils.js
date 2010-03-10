@@ -124,10 +124,6 @@ function getFullProDomain() {
 // domain, including port if necessary
 function getFullProHost() {
   var h = getFullProDomain();
-  var parts = request.host.split(':');
-  if (parts.length > 1) {
-    h += (':' + parts[1]);
-  }
   return h;
 }
 
