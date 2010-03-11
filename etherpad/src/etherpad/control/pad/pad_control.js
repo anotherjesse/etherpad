@@ -429,6 +429,23 @@ function render_create_post() {
   response.redirect("/"+padId);
 }
 
+function render_hackz_post() {
+  var padId = randomUniquePadId();
+  getSession().instantCreate = padId;
+  var txt = request.params.text;
+  if (txt) {
+    padutils.accessPadLocal(padId, function(pad) {
+      if (!pad.exists()) {
+        pad.create(txt);
+      }
+      else {
+        collab_server.setPadAText(pad, txt);
+      }
+    });
+  }
+  response.redirect("/"+padId);
+}
+
 //----------------------------------------------------------------
 // saverevision
 //----------------------------------------------------------------
